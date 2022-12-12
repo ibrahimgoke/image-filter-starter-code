@@ -34,7 +34,7 @@ import { Request, Response } from 'express';
 
   // Endpoint for filtering an image from a public url
   app.get("/filteredimage", async (req: Request, res: Response) => {
-    const { image_url } = req.query;
+    const { image_url } :{image_url:string} = req.query
     // Validate the image_url query param
     if (!image_url) {
       return res.status(400).send({ message: "image_url query parameter is required"});
